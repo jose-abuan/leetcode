@@ -5,8 +5,8 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target){ 
         vector<int> solution;
-        for(int i = 0; i < nums.size() - 1;i++){
-            for(int j = i + 1; j < nums.size(); j++){
+        for(unsigned int i = 0; i < nums.size() - 1;i++){
+            for(unsigned int j = i + 1; j < nums.size(); j++){
                 if(nums.at(i) + nums.at(j)){
                     solution = {i, j};  
                     return solution;
