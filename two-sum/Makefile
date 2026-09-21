@@ -13,15 +13,12 @@ TARGET_DEL = main.exe
 # Source files
 SRCS = test.cpp solution.cpp
 
-# Object files
-OBJS = $(SRCS:.cpp=.o)
-
 # Default rule to build and run the executable
 all: $(TARGET) run
 
-# Rule to link object files into the target executable
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+# Rule to compile source files directly into the target executeable
+$(TARGET): $(SRCS)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET)
 
 # Rule to compile .cpp files into .o files
 %.o: %.cpp
@@ -29,8 +26,8 @@ $(TARGET): $(OBJS)
 
 # Rule to run the executable
 run: $(TARGET)
-	$(TARGET)
+	./$(TARGET)
 
 # Clean rule to remove generated files
 clean:
-	del $(TARGET_DEL) $(OBJS)
+	rm -f $(TARGET)
