@@ -63,13 +63,16 @@ public:
     }
 
     string longestCommonPrefix(vector<string>& strs) {
-        string longest_common =  
+        string longest_common;
         for (string each : strs){
-
+            return "";
         }
         return "";   
     }
 
+    int threeSumClosest(vector<int>& nums, int target) {
+        
+    }
 };
 
 
